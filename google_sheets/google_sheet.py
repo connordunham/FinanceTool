@@ -114,7 +114,7 @@ if __name__ == '__main__':
     SAMPLE_RANGE_NAME = 'A1:D4'
     json_file_incorrect = r'C:\Users\dunha\OneDrive\Documents\Investment\invstr\FinanceTool\google_sheets\financer-304116-' \
                           r'9527b86349af.json'
-    json_file = 'client_secret_214644974504-lnabcc77ujsqnqfjhqu5lb3p1rb4d75l.apps.googleusercontent.com.json'
+    json_file = r'C:\Users\dunha\OneDrive\Documents\Google Oauth2 Keysclient_secret_214644974504-lnabcc77ujsqnqfjhqu5lb3p1rb4d75l.apps.googleusercontent.com.json'
 
     gsheet = GoogleSheet(SAMPLE_SPREADSHEET_ID_input, json_file)
     values = gsheet.read('A1:D3')
