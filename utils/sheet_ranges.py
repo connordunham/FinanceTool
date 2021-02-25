@@ -1,13 +1,11 @@
 
 SHEET_RANGES = {
     "Portfolio Holdings":{
-        "CURRENT_HOLDINGS":"'Portfolio Holdings'!B1:J10",
-        "DATE_LAST_MODIFIED":"'Portfolio Holdings'!A1"
-
+        "CURRENT_HOLDINGS":"'Portfolio Holdings'!B1:J10"
     },
     "Historic":{
-        "DAILY_WRITE": "'Holdings'!A4:F12"
-        "DAILY_READ": "'Holdings'!A3:F11"
+        "DAILY_WRITE": "'Historic'!A4:F12"
+        "DAILY_READ": "'Historic'!A3:F11"
     },
     "Growth & Metrics":{
         "DAILY_CHANGE": "'Growth & Metrics'!B3",
@@ -47,5 +45,24 @@ SHEET_RANGES = {
                 "CLOSE":"'DONOTTOUCH'!C17"
             }
         }
+    },
+    "Update Fields":{
+        "PORTFOLIO_LASTUPDATE": "'Portfolio Holdings'!B1",
+        "HISTORIC_W_LASTUPDATE": "'Historic'!D1",
+        "HISTORIC_W_LASTUPDATE": "'Historic'!H1"
+    }
+    "Script Status":{
+        "_TERMINATE":"'Script Status'!B1",
+        "json":"'Script Status'!B2",
+        "id":"'Script Status'!B3",
+        "cur_date":"'Script Status'!B4",
+        "cur_hour":"'Script Status'!B5",
+        "cur_day":"'Script Status'!B6",
+        "cur_year":"'Script Status'!B7",
+        "weekly_update_flag":"'Script Status'!B8",
+        "preopen_flag":"'Script Status'!B9",
+        "closing_flag":"'Script Status'!B10",
+        "error_flag":"'Script Status'!B11",
+        
     }
 }
