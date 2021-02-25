@@ -1,10 +1,11 @@
 from google_sheets.finance_functional import FinanceTool
-from datetime import timedelta, time
+from datetime import timedelta
+import time
 from utils.threading import  WAIT_TIME_MINS, WAIT_TIME_SECONDS
 from utils.threading import ProgramKilled, signal_handler, Job
 
 
-def run():
+def main():
     # ______CONFIG________
 
     JSON_FILE = r'C:\Users\dunha\OneDrive\Documents\Google Oauth2 Keys\temp_oauth.json'
@@ -13,7 +14,7 @@ def run():
     MAIN_OBJ = FinanceTool(GOOG_SHT_ID, JSON_FILE)
 
     # EXECUTE
-    job = Job(interval=timedelta(seconds=WAIT_TIME_SECONDS), execute=FinanceTool.update)
+    job = Job(interval=timedelta(seconds=WAIT_TIME_SECONDS), execute=MAIN_OBJ.update)
     job.start()
 
     # MAIN LOOP
@@ -26,12 +27,5 @@ def run():
             job.stop()
             break
 
-    gsheet.preopen_update()
-
-    gsheet.close()
-
-    FinanceToolObj = FinanceTool()
-
-
 if __name__ == '__main__':
-    run()
+    main()

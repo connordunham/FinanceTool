@@ -1,5 +1,7 @@
 import pandas as pd
-from google_sheets.access_sheet import GoogleSheet
+import time
+from FinanceTool.google_sheets.access_sheet import GoogleSheet
+from FinanceTool.utils.sheet_ranges import SHEET_RANGES
 
 
 class FinanceTool:
@@ -44,7 +46,7 @@ class FinanceTool:
         if int(self.cur_hour) > 0:
             self.preopen_update()
 
-        self.write(self._PORTFOLIO_DATA, self._PORTFOLIO_RANGE)
+        self.write(self._PORTFOLIO_DATA, SHEET_RANGES['portfolio_holdings']['CURRENT_HOLDINGS'])
 
         # Write latest update time
         time = pd.DataFrame([self.cur_time], columns=["Time Last Updated"])
@@ -54,8 +56,9 @@ class FinanceTool:
     # Updates neccassry fields of spread sheet at 9:00am
     def preopen_update(self):
 
+        print(SHEET_RANGES['Portfolio_Holdings']['CURRENT_HOLDINGS'])
 
-        data = self.read("A1:H49", "Portfolio Holdings")
+        data = self.read(SHEET_RANGES['Portfolio_Holdings']['CURRENT_HOLDINGS'], sheet="Portfolio Holdings")
         main_table_headers = data[0]
         main_table = data[1:]
 
@@ -72,7 +75,8 @@ class FinanceTool:
 
 
     def close(self):
-        self.write(self._PORTFOLIO_DATA, self._PORTFOLIO_RANGE)
+        self.write(self._PORTFOLIO_DATA, SHEET_RANGES['portfolio_holdings']['CURRENT_HOLDINGS'])
+
 
 
     def update_time(self):
