@@ -4,14 +4,14 @@ SHEET_RANGES = {
         "CURRENT_HOLDINGS":"'Portfolio Holdings'!B1:J10"
     },
     "Historic":{
-        "DAILY_WRITE": "'Historic'!A4:F12"
+        "DAILY_WRITE": "'Historic'!A4:F12",
         "DAILY_READ": "'Historic'!A3:F11"
     },
     "Growth & Metrics":{
         "DAILY_CHANGE": "'Growth & Metrics'!B3",
         "DAILY_PERCENTAGE": "'Growth & Metrics'!B4",
         "MARKET": "'Growth & Metrics'!B5",
-        "GAIN_ON_MARKET": "'Growth & Metrics'!B6"
+        "GAIN_ON_MARKET": "'Growth & Metrics'!B6",
         "SHARPE_RATIO": "'Growth & Metrics'!B7"
     },
     "Misc_Values":{
@@ -50,7 +50,7 @@ SHEET_RANGES = {
         "PORTFOLIO_LASTUPDATE": "'Portfolio Holdings'!B1",
         "HISTORIC_W_LASTUPDATE": "'Historic'!D1",
         "HISTORIC_W_LASTUPDATE": "'Historic'!H1"
-    }
+    },
     "Script Status":{
         "_TERMINATE":"'Script Status'!B1",
         "json":"'Script Status'!B2",

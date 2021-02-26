@@ -36,7 +36,7 @@ class GoogleSheet:
 
 
     # Update cells values in the google sheet
-    def write( self, df, loc="A1:A:100", sheet=False ):
+    def write( self, df, loc="A1:A:100", sheet=False, print=False):
         """
 
         :param data: [Dict] where the key is the column name, and def is the values
@@ -59,7 +59,8 @@ class GoogleSheet:
                 majorDimension='ROWS',
                 values=df.T.reset_index().T.values.tolist())
         ).execute()
-        print('Sheet successfully Updated')
+        if print:
+            print('Sheet successfully Updated %s' % response_date)
 
     def read( self, sheet_range, sheet=None ):
 
